@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="windows.IndexController" alignment="center" hgap="10" vgap="10" styleClass="root">
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+    
+    <Text styleClass="title" text="登录" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2" />
+    
+    <Label text="用户名：" GridPane.columnIndex="0" GridPane.rowIndex="1"  />
+    <TextField fx:id="usernameFXML" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    
+    <Label text="密码：" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <PasswordField fx:id="passwordFXML" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4" >
+        <Button fx:id="loginButton" text="登录" onAction="#loginAction"  />
+        <Button fx:id="logoutButton" text="注销" onAction="#logoutAction" disable="true" />
+    </HBox>
+    
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <Button text="设置" minWidth="90" minHeight="10"  />
+    </HBox>
+    
+    <BorderPane GridPane.columnIndex="0" GridPane.rowIndex="8" maxHeight="5" maxWidth="5" >
+       <Text fx:id="messageFXML" styleClass="message" />
+    </BorderPane>
+    
+    <stylesheets>
+        <URL value="@../css/index.css" />
+    </stylesheets>
+</GridPane>
