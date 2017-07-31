@@ -1,7 +1,7 @@
 /**
  * 
  */
-package network;
+package top.pengcheng789.java.swiftPen.network;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
  * @author chance
  *
  */
-class other {
+class Util {
 	static void encrypt(byte[] a){
 		for(int i = 0; i < a.length; i++){
 			a[i] =  (byte) (

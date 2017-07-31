@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 .root{
-    -fx-background-image:url("../img/bg.jpeg");
+    -fx-background-image:url("../img/bg.jpg");
 }
 
 .label{

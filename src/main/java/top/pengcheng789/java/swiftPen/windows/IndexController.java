@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package windows;
+package top.pengcheng789.java.swiftPen.windows;
 
 import java.io.IOException;
 import java.util.Timer;
@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
 import javafx.scene.text.Text;
-import network.Network;
+import top.pengcheng789.java.swiftPen.network.Network;
 
 /**
  *
@@ -52,15 +52,15 @@ public class IndexController {
 	}
         
 	brathe.schedule(new TimerTask(){
-            @Override
-            public void run(){
-		try {
-                    network.brathe();
-		} catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-		}
-            }
+        @Override
+        public void run(){
+		    try {
+                network.brathe();
+		    } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+		    }
+        }
 	}, 30000, 30000);
         
         this.loginButton.setDisable(true);

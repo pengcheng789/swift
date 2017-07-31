@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package windows;
+package top.pengcheng789.java.swiftPen.windows;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -32,7 +32,7 @@ public class Window extends Application{
         Parent root;
         Scene index;
         try{
-            root = FXMLLoader.load(getClass().getResource("./fxml/index.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/asset/windows/fxml/index.fxml"));
             index = new Scene(root, 700, 500);
             return index;
         }catch(IOException e){

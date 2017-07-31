@@ -1,7 +1,7 @@
 /**
  *
  */
-package network;
+package top.pengcheng789.java.swiftPen.network;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -87,12 +87,12 @@ public class Network {
 		for (int i = 0; i < packetByte.length; i++)
 			packetByte[i] = packet.toArray(new Byte[0])[i];
 
-		byte[] md5 = other.getMD5(packetByte);
+		byte[] md5 = Util.getMD5(packetByte);
 
 		for(int i = 2; i < 18; i++)
 			packetByte[i] = md5[i-2];
 
-		other.encrypt(packetByte);
+		Util.encrypt(packetByte);
 
 		return packetByte;
 	}
@@ -125,7 +125,7 @@ public class Network {
 
 		packet.add((byte) 0x14);
 		packet.add((byte) 6);
-		for (byte i : other.intToByte(this.index))
+		for (byte i : Util.intToByte(this.index))
 			packet.add(i);
 		this.index += 3;
 
@@ -137,12 +137,12 @@ public class Network {
 		for (int i = 0; i < packetByte.length; i++)
 			packetByte[i] = packet.toArray(new Byte[0])[i];
 
-		byte[] md5 = other.getMD5(packetByte);
+		byte[] md5 = Util.getMD5(packetByte);
 
 		for(int i = 2; i < 18; i++)
 			packetByte[i] = md5[i-2];
 
-		other.encrypt(packetByte);
+		Util.encrypt(packetByte);
 
 		return packetByte;
 	}
@@ -175,7 +175,7 @@ public class Network {
 
 		packet.add((byte) 0x14);
 		packet.add((byte) 6);
-		for (byte i : other.intToByte(this.index))
+		for (byte i : Util.intToByte(this.index))
 			packet.add(i);
 
 		int[] otherField = {0X2A, 6, 0, 0, 0, 0, 0x2B, 6, 0, 0, 0, 0, 0x2C, 6, 0, 0, 0, 0, 0x2D, 6, 0, 0, 0, 0, 0x2E, 6, 0, 0, 0, 0, 0x2F, 6, 0, 0, 0, 0};
@@ -186,12 +186,12 @@ public class Network {
 		for (int i = 0; i < packetByte.length; i++)
 			packetByte[i] = packet.toArray(new Byte[0])[i];
 
-		byte[] md5 = other.getMD5(packetByte);
+		byte[] md5 = Util.getMD5(packetByte);
 
 		for(int i = 2; i < 18; i++)
 			packetByte[i] = md5[i-2];
 
-		other.encrypt(packetByte);
+		Util.encrypt(packetByte);
 
 		return packetByte;
 	}
@@ -208,7 +208,7 @@ public class Network {
 		this.post.receive(dgPacket);
 
 		packet = dgPacket.getData();
-		other.dencrypt(packet);
+		Util.dencrypt(packet);
 
 		int messageIndex = 24;
 		if(packet[20] != 0){
