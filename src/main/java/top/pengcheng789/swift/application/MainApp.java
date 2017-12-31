@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package top.pengcheng789.java.swiftPen.windows;
+package top.pengcheng789.swift.application;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -15,7 +15,7 @@ import java.io.IOException;
  *
  * @author chance
  */
-public class Window extends Application{
+public class MainApp extends Application{
     @Override
     public void start (Stage stage){     
         Scene index = indexScene();

@@ -27,6 +27,7 @@ target/
 # IDEA #
 .idea/
 *.iml
+out/
 
 # Eclipse #
 .settings/
@@ -34,3 +35,7 @@ target/
 .classpath
 .project
 Servers/
+
+# Gradle #
+.gradle/
+build/

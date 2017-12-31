@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+version = '1.0.0'
+
+sourceCompatibility = 9.0
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'top.pengcheng789.swift.application.MainApp'
+    }
+}

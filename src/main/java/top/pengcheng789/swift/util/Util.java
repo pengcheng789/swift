@@ -1,7 +1,7 @@
 /**
  * 
  */
-package top.pengcheng789.java.swiftPen.network;
+package top.pengcheng789.swift.util;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -10,8 +10,8 @@ import java.security.NoSuchAlgorithmException;
  * @author chance
  *
  */
-class Util {
-	static void encrypt(byte[] a){
+public final class Util {
+	public static void encrypt(byte[] a){
 		for(int i = 0; i < a.length; i++){
 			a[i] =  (byte) (
 					(a[i] & 0x80) >> 6
@@ -27,7 +27,7 @@ class Util {
 		}
 	}
 	
-	static void dencrypt(byte[] a){
+	public static void dencrypt(byte[] a){
 		for(int i = 0; i < a.length; i++){
 			a[i] =  (byte) (
 					(a[i] & 0x80) >> 7
@@ -42,7 +42,7 @@ class Util {
 		}
 	}
 	
-	static byte[] intToByte(int a){
+	public static byte[] intToByte(int a){
 		byte[] aByte = new byte[4];
 		
 		aByte[3] = (byte) (a & 0xff);
@@ -53,7 +53,7 @@ class Util {
 		return aByte;
 	}
 	
-	static byte[] getMD5(byte[] a){
+	public static byte[] getMD5(byte[] a){
 		byte[] md5 = new byte[16];
 		
 		try {

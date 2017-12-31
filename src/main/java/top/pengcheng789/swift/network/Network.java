@@ -1,7 +1,6 @@
-/**
- *
- */
-package top.pengcheng789.java.swiftPen.network;
+package top.pengcheng789.swift.network;
+
+import top.pengcheng789.swift.util.Util;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -39,14 +38,6 @@ public class Network {
 			System.exit(0);
 		}
 	}
-        
-        public void setUsername(String username){
-            this.username = username;
-        }
-        
-        public void setPassword(String password){
-            this.password = password;
-        }
 
 	byte[] generateOnline (){
 		ArrayList<Byte> packet = new ArrayList<Byte>();
@@ -56,28 +47,33 @@ public class Network {
 		int packetLen = this.username.length()+this.password.length()+this.ip.length()+52;
 		packet.add((byte)packetLen);
 
-		for (int i = 0; i < 16 ; i ++)
-			packet.add((byte)0);
+		for (int i = 0; i < 16 ; i ++) {
+            packet.add((byte) 0);
+        }
 
 		packet.add((byte) 7);
 		packet.add((byte) 8);
-		for (String i : Pattern.compile("-").split(this.mac))
-			packet.add((byte)Integer.parseInt(i, 16));
+		for (String i : mac.split("-")) {
+            packet.add((byte) Integer.parseInt(i, 16));
+        }
 
 		packet.add((byte)1);
 		packet.add((byte)(this.username.length()+2));
-		for (byte i : this.username.getBytes())
-			packet.add(i);
+		for (byte i : this.username.getBytes()) {
+            packet.add(i);
+        }
 
 		packet.add((byte)2);
 		packet.add((byte)(this.password.length()+2));
-		for (byte i : this.password.getBytes())
-			packet.add(i);
+		for (byte i : this.password.getBytes()) {
+            packet.add(i);
+        }
 
 		packet.add((byte)9);
 		packet.add((byte)(this.ip.length()+2));
-		for (byte i : this.ip.getBytes())
-			packet.add(i);
+		for (byte i : this.ip.getBytes()) {
+            packet.add(i);
+        }
 
 		int[] otherField = {0x0A, 10, 105, 110, 116, 101, 114, 110, 101, 116, 0x0E, 3, 0, 0x1F, 7, 51, 46, 54, 46, 53};
 		for (int i : otherField)
@@ -244,4 +240,12 @@ public class Network {
 		this.post.receive(dgPacket);
 		this.post.close();
 	}
+
+    public void setUsername(String username){
+        this.username = username;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
+    }
 }
